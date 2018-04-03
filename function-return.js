@@ -1,13 +1,13 @@
 'use strict';
 
 function hazardWarningCreator (typeOfWarning) {
-  let warningCounter = 0;
+	let warningCounter = 0;
 
-  return (location) => {
-    warningCounter++;
-    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-  };   
+	return (location) => {
+		warningCounter++;
+		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${warningCounter === 1 ? 'time' : 'times'} today!`);
+	};
 }
 
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
@@ -19,6 +19,6 @@ rocksWarning('Main and 2nd');
 rocksWarning('Main and 3rd');
 
 oilWarning('Ave and Blvd');
-oilWarning('Circle and Way');
+oilWarning('Steet and Road');
 
 waterWarning('Home and Work');
